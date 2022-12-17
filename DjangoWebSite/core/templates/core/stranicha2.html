@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="main">
+        <!-- отличается на других страницах -->
+        <div class="main__links">
+            <a href="{% url 'admin_upload' %}" class="main__link">Загрузить</a>
+            <a href="{% url 'admin_send' %}" class="main__link">Разослать</a>
+        </div>
+        <!-- /отличается на других страницах -->
+        <div class="main__title">СИСТЕМЫ ВИДЕОРЕГСТРАЦИИ</div>
+    </section>
+
+    {% if request.user.is_authenticated %}
+    <section class="input__file">
+        <form action="{% url 'admin_upload' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}<br>
+            <button type="submit">ЗАГРУЗИТЬ НА СЕРВЕР</button>
+        </form>
+    </section>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="https://play-lh.googleusercontent.com/FPr2fq-8m3Io5b_vLYfixz3911fRfuT0TRi3vBDrP3SDqPcbk9MVm3XqFninddzBBw">
+
+    <!-- ШРИФТ -->
+    <link href="https://fonts.googleapis.com/css2?family=Della+Respira&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">
+</head>
+<body>
+    <section class="header">
+        <div class="header__wrapper">
+            <a href="tel:+78632991266" class="header__telephone"><span><i class="fa-solid fa-phone-flip"></i></span>+7 (863) 299-12-66</a>
+            <a href="mailto:Company@gmail.com" class="header__mail"><span><i class="fa-solid fa-envelope"></i></span>bezopas2012@yandex.ru</a>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="header__telephone"><span><i class="fa-solid fa-sign-out"></i></span>Выйти</a>
+            {% endif %}
+        </div>
+    </section>
+
+    {% block content %}
+    {% endblock %}
+
+    <section class="footer">
+        <div class="footer__wrapper">
+            <div class="footer__blocks">
+
+                <div class="footer__block-about">
+                    <div class="footer__block-about-title">О НАС</div>
+                    <ul class="footer__block-about-ul">
+                        <li class="footer__block-about-li">ООО:</li>
+                        <li class="footer__block-about-li">ИНН:</li>
+                        <li class="footer__block-about-li">КПП:</li>
+                        <li class="footer__block-about-li">ОГРН:</li>
+                        <li class="footer__block-about-li">Email:</li>
+                        <li class="footer__block-about-li">Телефон:</li>
+                        <li class="footer__block-about-li">Моб:</li>
+                        <li class="footer__block-about-li">Адрес:</li>
+                        <li class="footer__block-about-li">ул. Доватора 144/30 оф. №19</li>
+                        <li class="footer__block-about-li">Режим работы:</li>
+                    </ul>
+                </div>
+
+                <div class="footer__block-info">
+                    <div class="footer__block-info-text">
+                        <p>Ваша Безопасность ЮГ</p>
+                        <p>6163108322</p>
+                        <p>616801001</p>
+                        <p>1116195007026</p>
+                        <div class="footer__block-info-email"><a href="mailto:bezopas2012@yandex.ru">bezopas2012@yandex.ru</a></div>
+                        <div class="footer__block-info-tel"><a href="tel:+78632991266">+7 (863) 299-12-66</a></div>
+                        <div class="footer__block-info-tel"><a href="tel:+79185771218">+7 (918) 577-12-18</a></div>
+                        <p>344103 Ростовская область, г. Ростов-на-Дону.</p>
+                    </div>
+
+                    <div class="footer__block-info-weekend">пн-пт.: 09-18 ч., выходные сб., вс.</div>
+                </div>
+
+                <div class="footer__block-services">
+                    <div class="footer__block-services-wrapper">
+                        <div class="footer__block-services-title">НАШИ УСЛУГИ</div>
+                        <ul class="footer__block-services-ul">
+                            <li class="footer__block-services-li"><a href="#"><span><i class="fa-sharp fa-solid fa-check"></i></span>Видеонаблюдение</a></li>
+                            <li class="footer__block-services-li"><a href="#"><span><i class="fa-sharp fa-solid fa-check"></i></span>Видеорегистрация</a></li>
+                            <li class="footer__block-services-li"><a href="#"><span><i class="fa-sharp fa-solid fa-check"></i></span>Пожарная сигнализация</a></li>
+                            <li class="footer__block-services-li"><a href="#"><span><i class="fa-sharp fa-solid fa-check"></i></span>Домофония</a></li>
+                            <li class="footer__block-services-li"><a href="#"><span><i class="fa-sharp fa-solid fa-check"></i></span>Интернет/IP-телефония</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer__block-project">
+                    <div class="footer__block-project-wrapper">
+                        <div class="footer__block-project-title">РЕАЛИЗАЦИЯ ПРОЕКТОВ</div>
+                        <ul class="footer__block-project-ul">
+                            <li class="footer__block-project-li"><a href="#"><span><i class="fa-sharp fa-solid fa-check"></i></span>Безопасный детский сад</a></li>
+                            <li class="footer__block-project-li"><a href="#"><span><i class="fa-sharp fa-solid fa-check"></i></span>Безопасная школа</a></li>
+                            <li class="footer__block-project-li"><a href="#"><span><i class="fa-sharp fa-solid fa-check"></i></span>Дом под наблюдением</a></li>
+                            <li class="footer__block-project-li"><a href="#"><span><i class="fa-sharp fa-solid fa-check"></i></span>Безопасный двор</a></li>
+                            <li class="footer__block-project-li"><a href="#"><span><i class="fa-sharp fa-solid fa-check"></i></span>Контроль предприятия</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'core/js/script.js' %}"></script>
+    <script src="https://kit.fontawesome.com/db9388c583.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+
+    <section class="main">
+        <div class="main__title">СИСТЕМЫ ВИДЕОРЕГСТРАЦИИ</div>
+    </section>
+
+    <section class="input">
+        <div class="input__title">Войти в систему</div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="input-input">Вход</button>
+        </form>
+    </section>
+
+{% endblock %}
+
+
+
